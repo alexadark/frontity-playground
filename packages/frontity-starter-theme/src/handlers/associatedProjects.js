@@ -1,12 +1,14 @@
 export const associatedProjectsHandler = {
   name: "associated-projects",
   priority: 10,
-  pattern: "/:slug",
+  // pattern: "/:slug",
+  pattern: "/about",
   func: async ({ route, state, libraries }) => {
     //fetch the pages data
     const pageResponse = await libraries.source.api.get({
       endpoint: "pages",
-      params: { _embed: true },
+      params: { slug: "about", _embed: true },
+      // params: { _embed: true },
     });
 
     //populate the state with the response
@@ -34,7 +36,7 @@ export const associatedProjectsHandler = {
       state,
     });
 
-    //Populate data
+    //add link to data
     Object.assign(state.source.data[route], {
       id: pageData.id,
       type: pageData.type,
