@@ -53,6 +53,9 @@ const starterTheme = {
       closeSearchModal: ({ state }) => {
         state.theme.isSearchModalOpen = false;
       },
+      beforeSSR: ({ actions }) => async () => {
+        await actions.source.fetch("/projects");
+      },
     },
   },
   libraries: {

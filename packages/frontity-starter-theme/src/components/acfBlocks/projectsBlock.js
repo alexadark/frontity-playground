@@ -8,10 +8,6 @@ const ProjectsBlock = ({ projects, title, subtitle, state, actions }) => {
   // const project = state.source.projects[item.ID];
   //but in the state we get only the first page until we visit the projects page
 
-  //   useEffect(() => {
-  //     actions.source.fetch("/projects/");
-  //   }, []);
-
   const response = state.source.get("/projects/");
   // console.log("response", response);
 

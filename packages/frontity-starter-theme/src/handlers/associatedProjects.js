@@ -23,10 +23,9 @@ export const associatedProjectsHandler = {
       .find((layout) => layout.acf_fc_layout === "projects_block")
       .projects.map((project) => project.ID);
 
-    //Fetch the projects with thos ids
+    //Fetch the projects with these ids
     const projectsResponse = await libraries.source.api.get({
       endpoint: "projects",
-      //from where can I know teh params I can use ??
       params: { include: projectIds.join(",") },
     });
 
