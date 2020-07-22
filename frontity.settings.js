@@ -19,7 +19,7 @@ const settings = {
             ["Projects", "/projects/"],
             ["Flex", "/flex"],
           ],
-          autoPreFetch: "all",
+          autoPreFetch: "hover",
           featured: {
             showOnList: false,
             showOnPost: false,
